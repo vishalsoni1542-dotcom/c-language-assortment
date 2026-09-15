@@ -18,7 +18,7 @@ int main(){
 
     for(int j=0; j<size; j++){
             if(arr[j]<0){
-                printf("%d",&arr[j]);
+                printf("%d",arr[j]);
             }
     }
     return 0;

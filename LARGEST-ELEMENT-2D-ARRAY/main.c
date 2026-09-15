@@ -27,10 +27,10 @@ int main(){
     for(int k=0; k<row; k++){
         for(int p=0; p<col; p++){
             if(large<arr[k][p]){
-                printf("%d",arr[i][j]);
+               large = arr[k][p];
             }
         }
     }
-    printf("\n");
+    printf("%d\n", large);
     return 0;
 }

@@ -23,7 +23,7 @@ int main(){
         for(int p=0; p<row; p++){
             printf("%d",arr[p][k]);
         }
-        printf("/n");
+        printf("\n");
     }
 
     return 0;
