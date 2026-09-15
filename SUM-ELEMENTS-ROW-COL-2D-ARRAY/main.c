@@ -2,24 +2,55 @@
 
 int main(){
 
-    int size;
+    int row;
+    int col;
 
-    printf("enter the size of array's: ");
-    scanf("%d",&size);
+    printf("enter the row: ");
+    scanf("%d",&row);
 
-    int arr[size];
+    printf("enter the col: ");
+    scanf("%d",&col);
 
-    for(int i=0; i<size; i++){
-            printf("arr[%d]= ",i);
-            scanf("%d",&arr[i]);
+    int arr[row][col];
+
+    printf("Enter array elements:\n");
+
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+            printf("arr[%d][%d]= ",i,j);
+            scanf("%d",&arr[i][j]);
+        }
     }
 
-    printf("this is a negative number of array's element: ");
+    int rownum;
 
-    for(int j=0; j<size; j++){
-            if(arr[j]<0){
-                printf("%d",arr[j]);
-            }
-    }
+    printf("enter row number: ");
+    scanf("%d",&rownum);
+
+    int rowsum = 0;
+
+        printf("Elements of row %d: ", rownum);
+
+        for (int j = 0; j < col; j++) {
+            printf("%d ", arr[rownum][j]);
+            rowsum += arr[rownum][j];
+        }
+        printf("\nThe sum of row %d = %d\n", rownum, rowsum);
+
+    int colnum;
+
+    printf("enter row number: ");
+    scanf("%d",&colnum);
+
+    int colsum = 0;
+
+        printf("Elements of col %d: ", rownum);
+
+        for (int j = 0; j < row; j++) {
+            printf("%d ", arr[j][colnum]);
+            colsum += arr[j][colnum];
+        }
+        printf("\nThe sum of col %d = %d\n", colnum, colsum);
+    
     return 0;
 }
