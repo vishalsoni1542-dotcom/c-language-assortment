@@ -1,18 +1,20 @@
-# Find Negative Numbers in an Array
+# 2D Array Row and Column Sum in C
 
 ## 📌 Description
 
-This C language project demonstrates how to create a one-dimensional array, accept integer values from the user, and identify the negative numbers present in the array.
+This C language project demonstrates how to create a two-dimensional array, accept elements from the user, and calculate the sum of a selected row and column.
 
-The program uses a loop to check each element and prints the elements that are less than zero.
+The program uses nested loops to traverse the array and allows the user to choose which row and column to display and sum.
 
 ## ✨ Features
 
-* Accepts the array size from the user.
-* Creates an array using a Variable Length Array (VLA).
+* Accepts the number of rows and columns from the user.
+* Creates a 2D array using a Variable Length Array (VLA).
 * Takes input for each array element.
-* Checks each element for negative values.
-* Displays the negative numbers found in the array.
+* Displays the elements of a selected row.
+* Calculates the sum of the selected row.
+* Displays the elements of a selected column.
+* Calculates the sum of the selected column.
 
 ## 🛠️ Technologies Used
 
@@ -22,7 +24,7 @@ The program uses a loop to check each element and prints the elements that are l
 
 ## 📂 Project Structure
 
-```text
+```text id="q8s1fz"
 SUM-ELEMENTS-ROW-COL-2D-ARRAY/
 ├── main.c
 ├── output.png
@@ -33,7 +35,7 @@ SUM-ELEMENTS-ROW-COL-2D-ARRAY/
 
 ### 1. Compile the program
 
-```bash
+```bash id="6g3g0j"
 gcc main.c -o main
 ```
 
@@ -41,65 +43,90 @@ gcc main.c -o main
 
 **Windows:**
 
-```bash
+```bash id="8a1r5n"
 main
 ```
 
 **Linux / macOS:**
 
-```bash
+```bash id="p3t9v1"
 ./main
 ```
 
 ## 💻 Example Output
 
-```text
-enter the size of array's: 5
-arr[0]= 10
-arr[1]= -5
-arr[2]= 20
-arr[3]= -8
-arr[4]= 15
+```text id="r1x5j8"
+enter the row: 2
+enter the col: 3
+Enter array elements:
 
-this is a negative number of array's element: -5-8
+arr[0][0]= 10
+arr[0][1]= 20
+arr[0][2]= 30
+arr[1][0]= 40
+arr[1][1]= 50
+arr[1][2]= 60
+
+enter row number: 1
+Elements of row 1: 40 50 60
+The sum of row 1 = 150
+
+enter col number: 2
+Elements of col 2: 30 60
+The sum of col 2 = 90
 ```
-
-> **Note:** The current program prints the negative numbers without spaces. Adding a space after `%d` will make the output easier to read.
 
 ## 🔍 How It Works
 
-1. The user enters the size of the array.
-2. The program accepts integer values for each array element.
-3. A `for` loop checks every element.
-4. If an element is less than zero, it is printed.
+### 1. Row Sum
 
-### Core Logic
+The user enters a row number. The program traverses that row, displays its elements, and adds them together.
 
-```c
-for(int j = 0; j < size; j++){
-    if(arr[j] < 0){
-        printf("%d", arr[j]);
-    }
+```c id="d3x6qa"
+int rowsum = 0;
+
+printf("Elements of row %d: ", rownum);
+
+for (int j = 0; j < col; j++) {
+    printf("%d ", arr[rownum][j]);
+    rowsum += arr[rownum][j];
+}
+```
+
+### 2. Column Sum
+
+The user enters a column number. The program traverses that column, displays its elements, and calculates the sum.
+
+```c id="f7k2mb"
+int colsum = 0;
+
+printf("Elements of col %d: ", colnum);
+
+for (int j = 0; j < row; j++) {
+    printf("%d ", arr[j][colnum]);
+    colsum += arr[j][colnum];
 }
 ```
 
 ## 📚 Concepts Covered
 
-* One-dimensional arrays
+* Two-dimensional arrays
 * Variable Length Arrays
-* `for` loops
-* Conditional statements
+* Nested `for` loops
+* Row-wise traversal
+* Column-wise traversal
+* Calculating row and column sums
 * Array indexing
 * User input using `scanf()`
-* Output using `printf()`
+* Output formatting using `printf()`
 
 ## 🔮 Future Improvements
 
-* Add spaces between negative numbers.
-* Display a message when no negative numbers are found.
-* Add validation for the array size.
-* Count the total number of negative elements.
-* Calculate the sum of negative numbers.
+* Add validation for row and column numbers.
+* Allow the user to calculate sums for all rows and columns.
+* Fix the prompt `"enter row number"` before column input to `"enter column number"`.
+* Display the array in a formatted matrix.
+* Add a menu for different array operations.
 
 ## 👨‍💻 Author
 
